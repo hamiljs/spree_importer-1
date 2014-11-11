@@ -2,6 +2,9 @@ class Spree::Admin::ImportSourceFilesController < Spree::Admin::ResourceControll
 
   rescue_from GoogleDrive::AuthenticationError, with: :google_authenticate
 
+  def index
+    @collection=[]
+  end
   def new
     @import_source_file = Spree::ImportSourceFile.new
   end
